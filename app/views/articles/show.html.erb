@@ -1,6 +1,8 @@
 <h1>Showing Article Details</h1>
 <h2>Created by <%= @article.user.username %> </h2> 
 
+<%= link_to gravatar_for(@article.user), user_path(@article.user)%>
+
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>Description: </strong><%= @article.description %></p>
 

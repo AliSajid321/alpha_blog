@@ -16,7 +16,7 @@
                 <td><%= link_to 'Edit', edit_article_path(article.id) %></td>
                 <td><%= link_to 'Delete', article_path(article.id), data: { "turbo-method": :delete, "turbo-confirm": "Are you sure?" } %></td>  <%# turbo method data needed%>
                 <%# if you want to use the method: :delete command then alternative is to use button_to instead of link_to %>
-                <td style="text-align:center"><%= article.user.username %>
+                <td style="text-align:center"><%= link_to article.user.username, user_path(article.user) %>
             </tr>      
         <% end %>
     </tbody>
