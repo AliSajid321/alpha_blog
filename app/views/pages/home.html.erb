@@ -6,7 +6,12 @@
 <table>
     <tr>
         <td><%= link_to "Sign Up", signup_path  %></td>
-        <td><%= link_to "Log in", login_path  %></td>
+
+        <% if logged_in? %>
+            <td><%= link_to "Log out", logout_path, data: { "turbo-method": :delete,  }  %></td>
+        <% else %>
+            <td><%= link_to "Log in", login_path  %></td>
+        <% end %>
     </tr>
 </table>
 
