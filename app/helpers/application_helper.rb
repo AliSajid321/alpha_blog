@@ -7,12 +7,6 @@ module ApplicationHelper
         image_tag(gravatar_url, alt: user.username)
     end
 
-    def current_user                                                            # To avoid querying the database everytime we use
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]     # @current_user to simply return the current user
-                                                                                # if we have already queried the database before.    
-    end 
-
-    def logged_in?
-        !!current_user
-    end
+   
+   
 end
