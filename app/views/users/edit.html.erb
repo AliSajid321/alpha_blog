@@ -1,3 +1,5 @@
 <h1>Edit you Profile</h1>
 
 <%= render 'form' %>
+
+<%= link_to "Delete Profile", user_path(current_user), data: { "turbo-method": :delete, "turbo-confirm": "Are you sure?" } %>
