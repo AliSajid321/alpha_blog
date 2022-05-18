@@ -19,13 +19,20 @@
                     <%# if you want to use the method: :delete command then alternative is to use button_to instead of link_to %>
                 <% end %>
                 <td style="text-align:center"><%= link_to article.user.username, user_path(article.user) %>
-            </tr>      
+            </tr>  
+           
         <% end %>
+
+        
     </tbody>
 
+<p>
+    
+    <% if logged_in? %>
+        <%= link_to 'Create New Article', new_article_path %>
+    <% end %>
+    
+</p>
 
 </table>
 
-<p>
-    <%= link_to 'Create New Article', new_article_path %>
-</p>
