@@ -2,7 +2,10 @@
 <h2>Created by <%= @article.user.username %> </h2> 
 
 <%= link_to gravatar_for(@article.user), user_path(@article.user)%>
-
+<br/>
+<% if @article.categories.any? %>
+    <%= render @article.categories %>
+<% end %>
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>Description: </strong><%= @article.description %></p>
 

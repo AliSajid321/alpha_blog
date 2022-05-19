@@ -6,14 +6,15 @@
     <thead>
         <tr>
             <th>Category Name</th>
+            <th>Total Articles</th>
             
         </tr>
     <thead>
      <tbody>
         <% @categories.each do |category| %>
             <tr>
-                <td><%= category.name %></td>
-                
+                <td><%= link_to category.name, category_path(category)  %></td>
+                <td><%= pluralize(category.articles.count, "article") %></td>
             </tr>  
            
         <% end %>
