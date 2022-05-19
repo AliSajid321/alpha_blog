@@ -1,0 +1,3 @@
+class CategoriesController < ActionController
+
+end
